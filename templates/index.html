@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investo - Connecting Innovators</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Investo</h1>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="http://localhost:3000" target="_blank">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Connect, Share, Innovate</h2>
+            <p>Investo is the platform for sharing ideas, connecting innovators, and finding investors.</p>
+            <a href="#about" class="cta-btn">Learn More</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Investo</h2>
+            <p>Investo is a revolutionary platform that allows organizations to share their blogs and content with a global community of innovators. Whether you are an entrepreneur, startup, or established company, Investo helps you connect with like-minded individuals and potential investors.</p>
+        </div>
+    </section>
+
+    <section id="blogs">
+        <div class="container">
+            <h2>Read the Latest Blogs</h2>
+            <div class="blogs">
+            <ul>
+                {% for blog in blogs %}
+                <li>
+                    <h3>{{ blog.title }}</h3>
+                    <p>{{ blog.content }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or inquiries, feel free to get in touch with our team.</p>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Investo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
